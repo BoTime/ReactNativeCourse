@@ -6,13 +6,13 @@ import LittleLemonFooter from "@/components/LittleLemonFooter";
 import Login from "@/components/LittleLemonLogin";
 import { Colors } from "@/constants/Colors";
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   console.log("LoginScreen");
   return (
     <>
       <View style={styles.container}>
-        <LittleLemonHeader />
-        <Login />
+        {/* <LittleLemonHeader /> */}
+        <Login navigation={navigation}/>
       </View>
       <View style={styles.footerContainer}>
         <LittleLemonFooter />

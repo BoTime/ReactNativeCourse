@@ -11,7 +11,7 @@ import { Colors } from "@/constants/Colors";
 
 const logo = require("../assets/images/littleLemonLogo.png");
 
-export default function WelcomeMessage() {
+export default function WelcomeMessage({username} : {username: string}) {
   const colorScheme = useColorScheme();
   return (
     <View style={styles.container}>
@@ -53,9 +53,7 @@ export default function WelcomeMessage() {
               : { color: Colors.dark.welcomeScreenText },
           ]}
         >
-          Little Lemon is a charming neighborhood bistro that serves simple food
-          and classic cocktails in a lively but casual environment. We would
-          love to hear more about your experience with us!
+          Hi {username}, Little Lemon is your local Mediterranean Bistro.
         </Text>
       </ScrollView>
     </View>
@@ -66,20 +64,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 0.9,
   },
-  innerContainer: { backgroundColor: Colors.light.welcomeScreenBackground },
+  innerContainer: { backgroundColor: "red" },
   headerText: {
     flexWrap: "wrap",
     padding: 40,
     fontSize: 30,
     // textAlign: "center",
-    color: Colors.light.welcomeScreenFont,
+    color: Colors.light.text,
     // backgroundColor: Colors.light.welcomeScreenBackground,
   },
   regularText: {
     padding: 20,
     marginVertical: 8,
     fontSize: 24,
-    color: Colors.light.welcomeScreenFont,
+    color: Colors.light.text,
     textAlign: "center",
     // backgroundColor: Colors.light.welcomeScreenBackground,
   },

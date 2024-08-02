@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { Colors } from "@/constants/Colors";
 
-const Login = () => {
+const Login = ({ navigation } : {navigation: Navigation}) => {
   const [email, onChangeEmail] = useState("");
   const [password, onChangePassword] = useState("");
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -29,9 +29,6 @@ const Login = () => {
             onChangeText={onChangeEmail}
             placeholder={"email"}
             keyboardType={"email-address"}
-            onFocus={() => {
-              Alert.alert("onFocus");
-            }}
           ></TextInput>
         )}
         {!isLoggedIn && (
@@ -45,7 +42,10 @@ const Login = () => {
         )}
         <Pressable
           onPress={() => {
-            setLoggedIn(!isLoggedIn);
+            // setLoggedIn(!isLoggedIn);
+            navigation.navigate("Welcome", {
+              username: email,
+            });
           }}
           style={styles.button}
         >

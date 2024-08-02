@@ -6,6 +6,7 @@ import {
   FlatList,
   SectionList,
   ListRenderItem,
+  Pressable,
 } from "react-native";
 import { Colors } from "@/constants/Colors";
 
@@ -113,7 +114,7 @@ const MenuItems = () => {
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}
         ListHeaderComponent={Header}
-        ListFooterComponent={Footer}
+        // ListFooterComponent={Footer}
       ></SectionList>
     </View>
   );
@@ -132,7 +133,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.light.welcomeScreenBackground,
   },
   headerText: {
-    color: "white",
+    color: Colors.light.text,
     fontSize: 40,
     flexWrap: "wrap",
     textAlign: "center",
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   itemText: {
-    color: "#F4CE14",
+    color: Colors.light.text,
     fontSize: 20,
     backgroundColor: Colors.light.welcomeScreenBackground,
   },
