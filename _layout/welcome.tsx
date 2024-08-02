@@ -9,7 +9,7 @@ import { Colors } from "@/constants/Colors";
 console.log("index");
 export default function WelcomeScreen({ route, navigation }) {
   console.log("WelcomeScreen");
-  const { username } = route.params;
+  const { username } = route.params || "";
   return (
     <>
       <View style={styles.container}>
@@ -18,9 +18,7 @@ export default function WelcomeScreen({ route, navigation }) {
         <Pressable onPress={() => navigation.navigate("Menu")}>
           <Text style={styles.buttonText}>View Menu</Text>
         </Pressable>
-        <View style={styles.footerContainer}>
-          <LittleLemonFooter />
-        </View>
+        <LittleLemonFooter />
       </View>
     </>
   );

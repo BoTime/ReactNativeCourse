@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { Colors } from "@/constants/Colors";
 
-const Login = ({ navigation } : {navigation: Navigation}) => {
+const Login = ({ navigation }) => {
   const [email, onChangeEmail] = useState("");
   const [password, onChangePassword] = useState("");
   const [isLoggedIn, setLoggedIn] = useState(false);

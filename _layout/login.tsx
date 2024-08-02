@@ -12,11 +12,12 @@ export default function LoginScreen({ navigation }) {
     <>
       <View style={styles.container}>
         {/* <LittleLemonHeader /> */}
-        <Login navigation={navigation}/>
+        <Login navigation={navigation} />
       </View>
-      <View style={styles.footerContainer}>
+      <LittleLemonFooter />
+      {/* <View style={styles.footerContainer}>
         <LittleLemonFooter />
-      </View>
+      </View> */}
     </>
   );
 }
@@ -28,6 +29,5 @@ const styles = StyleSheet.create({
   },
   footerContainer: {
     backgroundColor: Colors.light.footerBackground,
-    marginBottom: 10,
   },
 });

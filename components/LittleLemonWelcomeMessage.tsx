@@ -62,7 +62,8 @@ export default function WelcomeMessage({username} : {username: string}) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.9,
+    flex: 1,
+    marginBottom: 10,
   },
   innerContainer: { backgroundColor: "red" },
   headerText: {

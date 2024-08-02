@@ -2,36 +2,60 @@ import { StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons } from "@expo/vector-icons";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 import WelcomeScreen from "./_layout/welcome";
 import LoginScreen from "./_layout/login";
 import MenuScreen from "./_layout/menu";
 
-const Stack = createNativeStackNavigator();
+// const MyNavigator = createNativeStackNavigator();
+const MyNavigator = createBottomTabNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
+      <MyNavigator.Navigator
         initialRouteName="Login"
-        screenOptions={{
+        screenOptions={({ route }) => ({
           headerStyle: styles.navigationHeader,
           headerTitleStyle: styles.navigationHeaderTitle,
           headerTintColor: Colors.light.navigationHeaderTint,
-          headerTitleAlign: "center"
-        }}
+          headerTitleAlign: "center",
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === "Welcome") {
+              iconName = focused ? "home" : "home-outline";
+              return <Ionicons name={iconName} size={size} color={color} />;
+            } else if (route.name === "Menu") {
+              iconName = focused ? "menu" : "menu-outline";
+              return <Ionicons name={iconName} size={size} color={color} />;
+            } else if (route.name === "Login") {
+              iconName = "login";
+              return (
+                <MaterialIcons name={iconName} size={size} color={color} />
+              );
+            }
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: Colors.light.headerBackground,
+          tabBarInactiveTintColor: "gray",
+        })}
       >
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Menu" component={MenuScreen} />
-      </Stack.Navigator>
+        <MyNavigator.Screen name="Welcome" component={WelcomeScreen} />
+        <MyNavigator.Screen name="Login" component={LoginScreen} />
+        <MyNavigator.Screen name="Menu" component={MenuScreen} />
+      </MyNavigator.Navigator>
     </NavigationContainer>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.light.welcomeScreenBackground,
+    // backgroundColor: Colors.light.welcomeScreenBackground,
+    backgroundColor: "red",
     alignItems: "center",
     justifyContent: "center",
   },

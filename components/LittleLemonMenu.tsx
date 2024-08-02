@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     borderColor: "#EDEFEE",
   },
   sectionHeader: {
-    backgroundColor: "#F4CE14",
+    backgroundColor: Colors.light.headerBackground,
     color: "black",
     fontSize: 26,
     flexWrap: "wrap",

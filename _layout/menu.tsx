@@ -2,7 +2,7 @@ import { View, StyleSheet, Pressable, Text } from "react-native";
 
 import React from "react";
 import LittleLemonHeader from "@/components/LittleLemonHeader";
-import LittleLemonMenu from "@/components/LittleLemonMenuV2";
+import LittleLemonMenu from "@/components/LittleLemonMenu";
 import { Colors } from "@/constants/Colors";
 
 export default function MenuScreen({ navigation }) {
