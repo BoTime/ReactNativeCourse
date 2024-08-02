@@ -1,6 +1,7 @@
 export const Colors = {
     light: {
         text: 'black',
+        background: 'white',
         welcomeScreenBackground: '#EDEFEE',
         welcomeScreenText: 'black',
         headerBackground: '#EE9972',
@@ -11,6 +12,7 @@ export const Colors = {
     },
     dark: {
         text: 'white',
+        background: 'black',
         welcomeScreenBackground: '#333333',
         welcomeScreenText: 'white',
         headerBackground: '#EE9972',
