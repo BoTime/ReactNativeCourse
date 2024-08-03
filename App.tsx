@@ -53,7 +53,9 @@ function App() {
     // </NavigationContainer>
 
     <NavigationContainer>
-      <MyNavigator.Navigator>
+      <MyNavigator.Navigator
+        screenOptions={{ drawerPosition: "right" }}
+      >
         <MyNavigator.Screen name="Welcome" component={WelcomeScreen} />
         <MyNavigator.Screen name="Login" component={LoginScreen} />
         <MyNavigator.Screen name="Menu" component={MenuScreen} />
